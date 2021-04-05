@@ -10,6 +10,7 @@ const gender = {
 
 const age = {
     "default": "123456789",
+    "min": 1,
 }
 
 const story = {

@@ -3,14 +3,13 @@
   "header": "My Little Hero",
   "instruction": "Let's create your own HERO! It's super easy with our application!",
   "nameLabel": "1. What is your Hero's name?",
-  "genderLabel": "2. Please choose a gender",
+  "genderLabel": "2. Please choose a gender.",
   "heLabel":  "he",
   "sheLabel": "she",
   "itLabel": "it",
-  "ageLabel": "3. How old is your Hero?",
+  "ageLabel": "3. How old is your hero?",
   "storyLabel": "4. What type of story would you like to read?",
   "imageLabel": "5. Upload an image (optional)",
   "submitText": "Create!",
-  "storyTitle": "Two Cats And A LadyBug007",
-  "storyText": "After a feast, two cats see a piece of cake and start fighting for it. LadyBug007, who is 123456789 years old, sees this as an opportunity for gain and offers to help them. Our hero divides the cake into two parts but shakes her head saying they are unequal. She takes a bite of one piece and then the other, but still finds them unequal. She continues doing so until there is no more cake left. leaving the poor little cats disappointed."
+  "storyTitle": "Two Cats And A LadyBug007"
 }

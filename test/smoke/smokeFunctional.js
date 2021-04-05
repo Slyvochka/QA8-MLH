@@ -1,6 +1,7 @@
 const sel = require('../../data/selectors');
 const exp = require  ('../../data/expected.json');
 const {name, gender, age, story} = require ('../../data/testData');
+const inputValues4 = require ('../../helpers/methods,js')
 
 describe('Required fields and story created', function () {
 
@@ -22,19 +23,10 @@ describe('Required fields and story created', function () {
 
     it('TC-027 User is redirected to the story page', function () {
         browser.refresh();
-        $(sel.name).setValue(name.default);
-        browser.pause(1000);
-        $$(sel.radioButtons)[gender.she].click();
-        browser.pause(1000);
-        $(sel.age).setValue(age.default);
-        browser.pause(1000)
-        $(sel.storyType).click();
-        $$(sel.storyList)[story.comedy].click();
-        browser.pause(1000);
+        inputValues4(name.default, gender.she, age.default, story.comedy )
         $(sel.submit).click();
-        browser.pause(3000);
         let tryAgainBtn = $(sel.tryAgain).isDisplayed();
-        expect(tryAgainBtn).toEqual(true);
+         expect(tryAgainBtn).toEqual(true);
     })
 
     // Verify story text for valid data

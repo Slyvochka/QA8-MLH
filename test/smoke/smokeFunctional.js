@@ -1,5 +1,6 @@
 const sel = require('../../data/selectors');
 const exp = require  ('../../data/expected.json');
+const {name, gender, age, story} = require ('../../data/testData');
 
 describe('Required fields and story created', function () {
 
@@ -10,31 +11,32 @@ describe('Required fields and story created', function () {
     })
 
     it('TC-026 Submit button is enabled after fields 1-4 are filled in with valid values ', function () {
-        $(sel.name).setValue('LadyBug007');
-        $$(sel.radioButtons)[1].click();
-        $(sel.age).setValue('123456789');
+        $(sel.name).setValue(name.default);
+        $$(sel.radioButtons)[gender.she].click();
+        $(sel.age).setValue(age.default);
         $(sel.storyType).click();
-        $$(sel.storyList)[6].click();
+        $$(sel.storyList)[story.comedy].click();
         let submitBtn = $(sel.submit).isEnabled();
         expect(submitBtn).toEqual(true);
     });
 
     it('TC-027 User is redirected to the story page', function () {
         browser.refresh();
-        $(sel.name).setValue('LadyBug007');
+        $(sel.name).setValue(name.default);
         browser.pause(1000);
-        $$(sel.radioButtons)[0].click();
+        $$(sel.radioButtons)[gender.she].click();
         browser.pause(1000);
-        $(sel.age).setValue('123456789');
+        $(sel.age).setValue(age.default);
         browser.pause(1000)
         $(sel.storyType).click();
-        $$(sel.storyList)[6].click();
+        $$(sel.storyList)[story.comedy].click();
         browser.pause(1000);
         $(sel.submit).click();
         browser.pause(3000);
         let tryAgainBtn = $(sel.tryAgain).isDisplayed();
         expect(tryAgainBtn).toEqual(true);
     })
+
     // Verify story text for valid data
     it('TC-028.a Title of the story "Two Cats And LadyBug007" is present', function (){
       let title = $(sel.storyTitle).getText();
@@ -52,4 +54,5 @@ describe('Required fields and story created', function () {
         let she = text.match(/\bshe\b|\bher\b/gi);
         expect(she.length).toEqual(3)
     })
+
 })

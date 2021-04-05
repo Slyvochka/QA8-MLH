@@ -1,12 +1,10 @@
-const sel = require('../../data/selectors');
+const sel = require ('../../data/selectors');
 const exp = require  ('../../data/expected.json');
 
 describe('Labels are Correct', function () {
 
     before('Open App',function (){
             browser.url('');
-           // browser.maximizeWindow();
-           // browser.pause('2000');
     })
 
     it('TC-015 Header = "My Little Hero " ', function () {
